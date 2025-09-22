@@ -1,5 +1,5 @@
 # Challenge Name
-type what the challenge asks
+Intro to Commands
 
 ## My solve
 **Flag:** `pwn.college{helloworld}`
