@@ -7,7 +7,7 @@
 1. Intro to Commands
 
 ## My solve
-**Flag:** `pwn.college{helloworld}`
+**Flag:** `pwn.college{cJN2__KOOkXeKU38nVt-B5hT-QD.QX3YjM1wSM5kjNzEzW}`
 
 type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
 ```bash
