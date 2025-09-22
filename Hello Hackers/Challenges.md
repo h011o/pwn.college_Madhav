@@ -1,5 +1,10 @@
+# Challenges
+1. Intro To Commands
+2. Intro to Arguments
+3. Command History
+   
 # Challenge Name
-Intro to Commands
+1. Intro to Commands
 
 ## My solve
 **Flag:** `pwn.college{helloworld}`
