@@ -40,7 +40,7 @@ pwn.college{UUwUeA_68O6TltOKivTFhM1-4cV.QX4YjM1wSM5kjNzEzW}
 ```
 
 ## What I learned 
-I learnt about the echo command which functions similar to the print statement. It can take in multiple arguments and display them in the terminal.
+I learnt about the echo command which functions similar to the print statement, the way it can input multiple arguments and output them in the terminal.
 
 # 3.  Command History
 This challenge requires you to use the command history feautre to retrieve the flag from the memory of the terminal.
