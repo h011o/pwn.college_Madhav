@@ -3,20 +3,23 @@
 2. Intro to Arguments
 3. Command History
    
-# Challenge Name
-1. Intro to Commands
+# 1. Intro to Commands
+This challenge asks you to invoke the hello command to get the flag
 
 ## My solve
 **Flag:** `pwn.college{cJN2__KOOkXeKU38nVt-B5hT-QD.QX3YjM1wSM5kjNzEzW}`
-
 ```bash
-Invoked the command hello to get the flag directly
+hacker@hello~intro-to-commands:~$ whoami
+hacker
+hacker@hello~intro-to-commands:~$ Hello
+bash: Hello: command not found
+hacker@hello~intro-to-commands:~$ hello
+Success! Here is your flag:
+pwn.college{cJN2__KOOkXeKU38nVt-B5hT-QD.QX3YjM1wSM5kjNzEzW}
 ```
 
-## What I learned
-
-The promt for the terminal is written as username@hostname:~$ 
-> ~ signifies that the user is not an adminstrator 
+## What I learned 
+I learnt how the promt for the linux terminal is written as username@hostname:~$, where the $ symbol means that the user does not have administrative privileges . I also learned that linux is case sensitive.
 
 ## References 
 None
