@@ -19,7 +19,7 @@ pwn.college{cJN2__KOOkXeKU38nVt-B5hT-QD.QX3YjM1wSM5kjNzEzW}
 ```
 
 ## What I learned 
-I learnt how the promt for the linux terminal is written as **username@hostname:~$**, where the $ symbol means that the user does not have administrative privileges whereas the # symbol means the user is an administrator.
+I learnt how the promt for the linux terminal is written as **username@hostname:~$**, where the $ symbol means that the user does not have administrative privileges whereas the # symbol means the user is an administrator. I also learnt how linux is case sensitive which means Hello does not provide the same output as hello does.
 
 ## References 
 None
