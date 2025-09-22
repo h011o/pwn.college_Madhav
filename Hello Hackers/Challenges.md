@@ -4,7 +4,7 @@
 3. Command History
    
 # 1. Intro to Commands
-This challenge asks you to invoke the hello command to get the flag
+This challenge asks you to invoke the hello command to get the flag.
 
 ## My solve
 **Flag:** `pwn.college{cJN2__KOOkXeKU38nVt-B5hT-QD.QX3YjM1wSM5kjNzEzW}`
@@ -25,8 +25,7 @@ I learnt how the promt for the linux terminal is written as **username@hostname:
 None
 
 # 2. Intro to Arguments
-This challenge requires you to use the echo command to get the flag.
-
+This challenge requires you to use the hello command with an argument.
 ## My solve
 **Flag:** `pwn.college{UUwUeA_68O6TltOKivTFhM1-4cV.QX4YjM1wSM5kjNzEzW}`
 ``` bash 
