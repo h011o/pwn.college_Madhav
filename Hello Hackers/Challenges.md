@@ -14,7 +14,9 @@ Invoked the command hello to get the flag directly
 ```
 
 ## What I learned
-The promt for the terminal is written as username@hostname:~$ and ~ signifies that the user is not an adminstrator 
+
+The promt for the terminal is written as username@hostname:~$ 
+> ~ signifies that the user is not an adminstrator 
 
 ## References 
 None
