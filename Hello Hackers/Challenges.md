@@ -9,14 +9,12 @@
 ## My solve
 **Flag:** `pwn.college{cJN2__KOOkXeKU38nVt-B5hT-QD.QX3YjM1wSM5kjNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
 ```bash
-example triple ticks for bash
-pwn.college{helloworld}
+Invoked the command hello to get the flag directly
 ```
 
 ## What I learned
-explain what you learned
+The promt for the terminal is written as username@hostname:~$ and ~ signifies that the user is not an adminstrator 
 
 ## References 
-Add any references or videos u used while solving the challenge.
+None
