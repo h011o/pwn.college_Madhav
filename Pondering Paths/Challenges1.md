@@ -217,17 +217,25 @@ I learnt how the linux filesystem automatically avoids looking in the current di
 None
 
 # 9. Home sweet home
-
+This challenge requires us to copy the flag to /home/hacker under a set of three constraints.
 
 ## My solve
-**Flag:** ` `
+**Flag:** `pwn.college{AdlOEI47qeSdsoecuITXvu7CGkT.QXzMDO0wSM5kjNzEzW} `
+
+Firstly, the path had to be absolute. So I started the file path with (/) which was already one character. Then, I used the (~) which represented the home directory for the challenge path to write a copy of the flag to the file named 'm'.
 
 ```bash
+hacker@paths~home-sweet-home:/$ challenge/run
+You must provide an argument to /challenge/run when you invoke it!
+hacker@paths~home-sweet-home:/$ challenge/run ~/m
+Writing the file to /home/hacker/m!
+... and reading it back to you:
+pwn.college{AdlOEI47qeSdsoecuITXvu7CGkT.QXzMDO0wSM5kjNzEzW}
 
 ```
 
-## What I learned
-
+## What I learned.
+I learnt that files can be transferred from a different directory to the home directory using the (~) operator
 
 ## References 
 None
