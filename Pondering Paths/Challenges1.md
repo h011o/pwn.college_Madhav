@@ -219,6 +219,9 @@ None
 
 # 9. Home sweet home
 This challenge requires us to copy the flag to /home/hacker under a set of three constraints.
+Your argument must be an absolute path.
+The path must be inside your home directory.
+Before expansion, your argument must be three characters or less.
 
 ## My solve
 **Flag:** `pwn.college{AdlOEI47qeSdsoecuITXvu7CGkT.QXzMDO0wSM5kjNzEzW} `
