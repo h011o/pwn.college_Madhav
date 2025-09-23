@@ -77,7 +77,7 @@ pwn.college{AK2UsF7F5Z1PwiwlBeE9c2x8ntO.QX2QTN0wSM5kjNzEzW}
 ```
 
 ## What I learned
-I realized that programs cannot be executed directly from their path before accessing its directory. I also understood how useful the 'cd' command is in navigating the linux filesystem.
+I realized that programs cannot be executed directly from their path before accessing its directory.
 
 ## References 
 None
@@ -105,38 +105,136 @@ Here is your flag:
 pwn.college{g66T1dhFkpzstRbdTFbR-MzoOwD.QX3QTN0wSM5kjNzEzW}
 ```
 
-## What I learned
-I noticed how the output said /challenge/run is an absolute path.
-
 ## References 
 None
 
-# 5. Position elsewhere
+# 5. Position yet Elsewhere 
 This challenge asks us to execute a certain program from a specific path.
 
 ## My solve
-**Flag:** `pwn.college{g66T1dhFkpzstRbdTFbR-MzoOwD.QX3QTN0wSM5kjNzEzW}`
-This flag was obtained following the same process as the previous one.
+**Flag:** `
+pwn.college{YTEOjchtbSPJn0jP0_2WWdqL24W.QX4QTN0wSM5kjNzEzW}`
+
+This flag was obtained following the same process as the previous two.
 first I located the position of the present directory using (~) after which I attempted to change the directory and run the challenge program.
 
 ```bash
-hacker@paths~position-elsewhere:~$ ~
+hacker@paths~position-yet-elsewhere:~$ ~
 bash: /home/hacker: Is a directory
-hacker@paths~position-elsewhere:~$ /challenge/run
+hacker@paths~position-yet-elsewhere:~$ /challenge/run
 Incorrect...
-You are not currently in the /home directory.
+You are not currently in the /proc/138/fd directory.
 Please use the `cd` utility to change directory appropriately.
-hacker@paths~position-elsewhere:~$ cd /home
-hacker@paths~position-elsewhere:/home$ /challenge/run
+hacker@paths~position-yet-elsewhere:~$ cd /proc/138/fd
+hacker@paths~position-yet-elsewhere:/proc/138/fd$ /challenge/run
 Correct!!!
 /challenge/run is an absolute path, invoked from the right directory!
 Here is your flag:
-pwn.college{g66T1dhFkpzstRbdTFbR-MzoOwD.QX3QTN0wSM5kjNzEzW}
+pwn.college{YTEOjchtbSPJn0jP0_2WWdqL24W.QX4QTN0wSM5kjNzEzW}
 ```
 
 ## What I learned
-I noticed how the output said /challenge/run is an absolute path.
+I understood the concept of the 'cd' command in navigating the linux filesystem.
 
 ## References 
 None
+
+# 6. Implicit relative paths, from /
+This challenge asks us to execute a certain program using a relative path.  
+
+## My solve
+**Flag:** `
+pwn.college{sA_F56BVy74uMxPUlSWHq6QyY0e.QX5QTN0wSM5kjNzEzW}`
+
+
+```bash
+hacker@paths~implicit-relative-paths-from-:~$ ~
+bash: /home/hacker: Is a directory
+hacker@paths~implicit-relative-paths-from-:~$ cd /
+hacker@paths~implicit-relative-paths-from-:/$ challenge/run
+Correct!!!
+challenge/run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{sA_F56BVy74uMxPUlSWHq6QyY0e.QX5QTN0wSM5kjNzEzW}
+```
+
+## What I learned
+I understood the concept of a relative path which refers to the relative position of a file with respect to the directory it is under. Relative paths are used to navigate directories based on your current location in the file system whereas an absolute path is used to navigate directly to a specific directory from the root, regardless of your current location.
+
+## References 
+https://www.geeksforgeeks.org/linux-unix/absolute-relative-pathnames-unix/
+
+
+
+# 7. Explicit relative paths, from /
+This challenge requires us to use the . operator to get our flag.
+
+
+## My solve
+**Flag:** `
+pwn.college{sA_F56BVy74uMxPUlSWHq6QyY0e.QX5QTN0wSM5kjNzEzW}  `
+
+
+```bash
+hacker@paths~explicit-relative-paths-from-:~$ ~
+bash: /home/hacker: Is a directory
+hacker@paths~explicit-relative-paths-from-:~$ cd /
+hacker@paths~explicit-relative-paths-from-:/$ ./challenge/./run
+Correct!!!
+./challenge/./run is a relative path, invoked from the right directory!
+Here is your flag:
+```
+
+## What I learned
+ I noticed how the explicit relative path is a more precise way of looking for programs inside a directory.
+
+## References 
+None
+
+# 8. Implictive relative path
+This challenge asks us to invoke the pwn program using its absolute path.
+
+## My solve
+**Flag:** `pwn.college{4UUZA06Vfd65dJaa-2r1NkpvzL8.QXxUTN0wSM5kjNzEzW}`
+
+```bash
+hacker@paths~implicit-relative-path:~$ ~
+bash: /home/hacker: Is a directory
+hacker@paths~implicit-relative-path:~$ cd /challenge
+hacker@paths~implicit-relative-path:/challenge$ /run
+bash: /run: Is a directory
+hacker@paths~implicit-relative-path:/challenge$ ./run
+Correct!!!
+./run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{4UUZA06Vfd65dJaa-2r1NkpvzL8.QXxUTN0wSM5kjNzEzW}
+```
+
+## What I learned
+I learnt how the linux filesystem automatically avoids looking in the current directory when a naked path is provided to prevent accidental execution of programs. This is where the importance of explicit path lies, it *explicitly* tells the Linux filesystem to execute the program in the current directory
+
+## References 
+None
+
+# 9. Home sweet home
+
+
+## My solve
+**Flag:** ` `
+
+```bash
+
+```
+
+## What I learned
+
+
+## References 
+None
+
+
+
+
+
+
 
