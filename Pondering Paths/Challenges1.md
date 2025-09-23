@@ -167,7 +167,7 @@ https://www.geeksforgeeks.org/linux-unix/absolute-relative-pathnames-unix/
 
 
 # 7. Explicit relative paths, from /
-This challenge requires us to use the . operator to get our flag.
+This challenge requires us to use the . operator inside the / directory to get our flag.
 
 
 ## My solve
@@ -186,13 +186,13 @@ Here is your flag:
 ```
 
 ## What I learned
- I noticed how the explicit relative path is a more precise way of looking for programs inside a directory.
+I noticed how the explicit relative path is a more precise way of looking for programs inside a directory.
 
 ## References 
 None
 
 # 8. Implictive relative path
-This challenge asks us to invoke the pwn program using its absolute path.
+This challenge asks us to use . operator inside the /challenge directory to get our flag.
 
 ## My solve
 **Flag:** `pwn.college{4UUZA06Vfd65dJaa-2r1NkpvzL8.QXxUTN0wSM5kjNzEzW}`
