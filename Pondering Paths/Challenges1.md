@@ -87,6 +87,7 @@ This challenge asks us to execute a certain program from a specific path.
 
 ## My solve
 **Flag:** `pwn.college{g66T1dhFkpzstRbdTFbR-MzoOwD.QX3QTN0wSM5kjNzEzW}`
+
 This flag was obtained following the same process as the previous one.
 first I located the position of the present directory using (~) after which I attempted to change the directory and run the challenge program.
 
