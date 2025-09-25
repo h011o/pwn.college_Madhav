@@ -256,17 +256,11 @@ The syntax of the mkdir command is of the form:
 > This challenge introduces us to the 'find' command and asks us to use it to find the flag.
 
 ## My solve
-**Flag:** `pwn.college{cevDqCFZZYWfHdLHpeU_6Fs1YnO.QXxMDO0wSM5kjNzEzW}`
+**Flag:** ``
 
 First I changed the directory to / and simply used find on it, this started generating an endless list of files and directories. Then I used find / -name flag 
 ```bash
-hacker@commands~making-directories:~$ mkdir /tmp/pwn
-hacker@commands~making-directories:~$ cd /tmp/pwn
-hacker@commands~making-directories:/tmp/pwn$ touch college
-hacker@commands~making-directories:/tmp/pwn$ cd
-hacker@commands~making-directories:~$ /challenge/run
-Success! Here is your flag:
-pwn.college{cevDqCFZZYWfHdLHpeU_6Fs1YnO.QXxMDO0wSM5kjNzEzW}
+
 ```
 ## What I learned
 The 'file' command is used to search for files and directories. It can take arguments and also look in specific search locations. It's different from grep because grep searches for text inside the file whereas find searches for the file itself.
