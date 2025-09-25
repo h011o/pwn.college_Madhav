@@ -40,7 +40,7 @@ pwn.college{c1ZrrJFTAMHZPb6hDtmTLCJcpUe.QX5ETO0wSM5kjNzEzW}
 ```
 
 ## What I learned 
-I learnt how we can also provide paths as arguments for the cat command.
+I learnt how we can also provide paths as arguments for the cat command. This helps us view the content of files without having to use cd.
 
 # 4. grepping for a needle in a haystack
 > This challenge introduces us to the 'grep' command and asks us to use it to search for the flag among thousands of lines of text.
