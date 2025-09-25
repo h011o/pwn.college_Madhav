@@ -118,7 +118,7 @@ pwn.college{ogdgn7CkOgVas8AFdJyNIrGBXYz.QXwMDO0wSM5kjNzEzW}
 ```
 ## What I learned
 The 'touch' command is used to create new files in a given directory.
-The syntax of the ls command is of the form:
+The syntax of the touch command is of the form:
 > user@domain:~$ touch [file name]
 
 # 8. removing files
@@ -136,10 +136,10 @@ pwn.college{onAaRMgJC91xx2vBvKUk8GcailS.QX2kDM1wSM5kjNzEzW}
 ## What I learned
 The 'rm' command is used to delete files in a given directory.
 The syntax of the rm command is of the form:
-> user@domain:~$ rm [file name]
+> user@domain:~$ rm [file to be removed]
  
 # 9. moving files
- This challenge introduces us to the 'mv' command and asks us to move a file to a specific path
+This challenge introduces us to the 'mv' command and asks us to move a file into a specific path
 
 ## My solve
 **Flag:** `pwn.college{8O4Ymt9osErntDw1sEwSQnpLtDV.0VOxEzNxwSM5kjNzEzW}`
@@ -155,8 +155,30 @@ pwn.college{8O4Ymt9osErntDw1sEwSQnpLtDV.0VOxEzNxwSM5kjNzEzW}
 ```
 ## What I learned
 The 'mv' command is used to transport files in a given directory.
-The syntax of the rm command is of the form:
+The syntax of the mv command is of the form:
 > user@domain:~$ mv [file to be transferred] [path to be transferred to]
+
+# 10. hidden files
+This challenge introduces us to concept of hidden files and asks us to look for a flag inside a hidden file.
+
+## My solve
+**Flag:** `pwn.college{ED3qewXTFxVCrCXbWUc9ogWvrLo.QXwUDO0wSM5kjNzEzW}`
+
+```bash
+hacker@commands~hidden-files:~$ cd /
+hacker@commands~hidden-files:/$ ls -a
+.   .dockerenv             bin   challenge  etc   lib    lib64   media  nix  proc  run   srv  tmp  var
+..  .flag-311512805813923  boot  dev        home  lib32  libx32  mnt    opt  root  sbin  sys  usr
+hacker@commands~hidden-files:/$ cat flag-311512805813923
+cat: flag-311512805813923: No such file or directory
+hacker@commands~hidden-files:/$ cat .flag-311512805813923
+pwn.college{ED3qewXTFxVCrCXbWUc9ogWvrLo.QXwUDO0wSM5kjNzEzW}
+```
+## What I learned
+The 'ls -a' command is used to view "hidden" files that start with a '.' which the linux filesystem hides by default.
+
+
+
 
 
 
