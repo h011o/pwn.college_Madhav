@@ -88,7 +88,7 @@ HINT 2: though the manpage is randomly named, you still actually use /challenge/
 
 
 ## My solve
-**Flag:** `pwn.college{UQhVgjwjJEsYd1S97f1EC-mXNUK.QX1EDO0wSM5kjNzEzW}`
+**Flag:** `pwn.college{UsziKakic40YTEV_gviftUIx5HB.QX2EDO0wSM5kjNzEzW}`
 
 After opening the manual page, I use the / key to search for 'search'
 On reading a bit, I came upon this:     
@@ -105,15 +105,32 @@ On reading a bit, I came upon this:
 ```
 
 ```bash
-hacker@man~searching-manuals:~$ /challenge/challenge --irqe
-Initializing...
-Correct usage! Your flag: pwn.college{UQhVgjwjJEsYd1S97f1EC-mXNUK.QX1EDO0wSM5kjNzEzW}
-hacker@man~searching-manuals:~$ /challenge/challenge --irqe
-Initializing...
-Correct usage! Your flag: pwn.college{UQhVgjwjJEsYd1S97f1EC-mXNUK.QX1EDO0wSM5kjNzEzW}
+hacker@man~searching-for-manuals:~$ man man
+hacker@man~searching-for-manuals:~$ man -k challenge
+sziakicgvi (1)       - print the flag!
+hacker@man~searching-for-manuals:~$ /challenge/challenge -skiaki 405
+Incorrect usage! Please read the hidden challenge man page!
+hacker@man~searching-for-manuals:~$ /challenge/challenge --sziaki 405
+Correct usage! Your flag: pwn.college{UsziKakic40YTEV_gviftUIx5HB.QX2EDO0wSM5kjNzEzW}
 ```
 
 ## What I learned
-> '/' to search inside manuals and 'n' = next result, 'N' = previous result.
+> manuals can be vast and learning how to navigate them is an important skill.
+
+# 6. Helpful Programs 
+> This challenge teaches us how to read a specific programs documentation using --help.
+
+## My solve
+**Flag:** ``
+
+
+```bash
+
+```
+
+## What I learned
+> 
+
+
 
 
