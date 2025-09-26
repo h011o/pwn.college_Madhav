@@ -313,7 +313,7 @@ https://www.geeksforgeeks.org/linux-unix/find-command-in-linux-with-examples/
 ## My solve
 **Flag:** `pwn.college{YAzKp1uUD4l5iy02-oIdz69YxSL.QXxcTN0wSM5kjNzEzW}`
 
-First I tried catting the /not-the-flag file but it said permission denied, I was also unable to create a sym link with ~/not-the-flag. Then I created a different file 'flag' in the home directory and attempted to make a sym link with /flag and realized that it does not work on existing files. From this I realized sym link creates SHORTCUTS and not files, and when the shortcut is called, the link is executed. This challenge states that /home/hacker/not-the-flag is called by /challenge/catflag, which meant /home/hacker/not-the-flag had to be the shortcut. But it was already a file, which meant the only solution was to delete it and recreate it as a shortcut.
+First I tried catting the /not-the-flag file but it said permission denied, I was also unable to create a sym link with ~/not-the-flag. Then I created a different file 'flag' in the home directory and attempted to make a sym link with /flag and realized that it does not work on existing files. This challenge states that /home/hacker/not-the-flag is called by /challenge/catflag, which meant /home/hacker/not-the-flag had to be the link. But it was already a file, which meant the only solution was to delete it and recreate it as a shortcut.
 
 ```bash
 hacker@commands~linking-files:~$ rm /home/hacker/not-the-flag
