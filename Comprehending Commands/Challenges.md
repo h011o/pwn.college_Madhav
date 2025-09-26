@@ -256,18 +256,79 @@ The syntax of the mkdir command is of the form:
 > This challenge introduces us to the 'find' command and asks us to use it to find the flag.
 
 ## My solve
-**Flag:** ``
+**Flag:** `pwn.college{Ef9mAg3LXd_z_DqUl2rACdqCtn_.QXyMDO0wSM5kjNzEzW}`
 
 First I changed the directory to / and simply used find on it, this started generating an endless list of files and directories. Then I used find / -name flag 
 ```bash
-
+hacker@commands~finding-files:~$ find / -type f -name flag
+find: ‘/root’: Permission denied
+find: ‘/proc/1/task/1/fd’: Permission denied
+find: ‘/proc/1/task/1/fdinfo’: Permission denied
+find: ‘/proc/1/task/1/ns’: Permission denied
+find: ‘/proc/1/fd’: Permission denied
+find: ‘/proc/1/map_files’: Permission denied
+find: ‘/proc/1/fdinfo’: Permission denied
+find: ‘/proc/1/ns’: Permission denied
+find: ‘/proc/7/task/7/fd’: Permission denied
+find: ‘/proc/7/task/7/fdinfo’: Permission denied
+find: ‘/proc/7/task/7/ns’: Permission denied
+find: ‘/proc/7/fd’: Permission denied
+find: ‘/proc/7/map_files’: Permission denied
+find: ‘/proc/7/fdinfo’: Permission denied
+find: ‘/proc/7/ns’: Permission denied
+find: ‘/var/log/private’: Permission denied
+find: ‘/var/log/apache2’: Permission denied
+find: ‘/var/log/mysql’: Permission denied
+find: ‘/var/cache/ldconfig’: Permission denied
+find: ‘/var/cache/apt/archives/partial’: Permission denied
+find: ‘/var/cache/private’: Permission denied
+find: ‘/var/lib/apt/lists/partial’: Permission denied
+find: ‘/var/lib/php/sessions’: Permission denied
+find: ‘/var/lib/mysql-files’: Permission denied
+find: ‘/var/lib/private’: Permission denied
+find: ‘/var/lib/mysql-keyring’: Permission denied
+find: ‘/var/lib/mysql’: Permission denied
+find: ‘/tmp/tmp.TpSOPGOVKK’: Permission denied
+find: ‘/run/mysqld’: Permission denied
+find: ‘/run/sudo’: Permission denied
+find: ‘/etc/ssl/private’: Permission denied
+/usr/share/javascript/mathjax/unpacked/jax/output/SVG/fonts/Asana-Math/Symbols/flag
+hacker@commands~finding-files:~$ cat /usr/share/javascript/mathjax/unpacked/jax/output/SVG/fonts/Asana-Math/Symbols/flag
+pwn.college{Ef9mAg3LXd_z_DqUl2rACdqCtn_.QXyMDO0wSM5kjNzEzW}hacker@commands~finding-files:~$ 
 ```
 ## What I learned
-The 'file' command is used to search for files and directories. It can take arguments and also look in specific search locations. It's different from grep because grep searches for text inside the file whereas find searches for the file itself.
+The 'find' command is used to search for files and directories. It can take arguments and also look in specific search locations. It's different from grep because grep searches for text inside the file whereas find searches for the file itself. 
 I also noticed that find can be used to list (find .) files similar to 'ls-a' but in an unorganized manner.
 
 The syntax of the find command is of the form:
-> user@domain:~$ find [directory] -name [file to be searched] 
+> user@domain:~$ find [directory] -name [file to be searched]
+> find can also be used to search for files or directories specially by using -type f/d before its name.
+
+## References
+https://www.geeksforgeeks.org/linux-unix/find-command-in-linux-with-examples/
+
+# 14. linking files
+> This challenge asks us to use the concept of symlink to aquire our flag
+
+## My solve
+**Flag:** `pwn.college{YAzKp1uUD4l5iy02-oIdz69YxSL.QXxcTN0wSM5kjNzEzW}`
+
+First I tried catting the /not-the-flag file but it said permission denied, I was also unable to create a sym link with ~/not-the-flag. Then I created a different file 'flag' in the home directory and attempted to make a sym link with /flag and realized that it does not work on existing files. From this I realized sym link creates SHORTCUTS and not files, and when the shortcut is called, the link is executed. This challenge states that /home/hacker/not-the-flag is called by /challenge/catflag, which meant /home/hacker/not-the-flag had to be the shortcut. But it was already a file, which meant the only solution was to delete it and recreate it as a shortcut.
+
+```bash
+hacker@commands~linking-files:~$ rm /home/hacker/not-the-flag
+hacker@commands~linking-files:~$ ln -s /flag /home/hacker/not-the-flag
+hacker@commands~linking-files:~$ /challenge/catflag
+About to read out the /home/hacker/not-the-flag file!
+pwn.college{83WOcXN3xkH-a4Z-C7TfAErHvJh.QX5ETN1wSM5kjNzEzW}
+```
+
+## What I learned 
+> hard links are alternate instances of one source. a soft link is like an arrow pointing directly to the original source.
+> The file command is used to view the *type* of the file (ascii text, sym link etc)
+sym-link syntax: ln -s [original path] [link path]
+
+
 
 
 
