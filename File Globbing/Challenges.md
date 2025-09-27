@@ -157,68 +157,96 @@ hacker@globbing~multiple-globs:/challenge/files$
 ## What I learned
 I learned how linux searches for every possible combination in the directory to autocomplete for every * used in an argument. So if we ran the challenge with *, it would just list every file under the directory since it autocompletes without any constraints. For example if we ran 'p *' then it would search for every file starting with p. 
 
-6. Mixing globs
-This challenge requires us to use the globs from the previous challenges together.
+# 6. Mixing globs
+> This challenge requires us to use the globs from the previous challenges together.
 
 ## My solve
-**Flag:** `pwn.college{helloworld}`
+**Flag:** `pwn.college{YiOtBoznB0SNfxtU2h-96J-dmd7.QX1IDO0wSM5kjNzEzW}`
 
 Here we are required to match the files "challenging", "educational", and "pwning" using 6 characters or less. 
+First, I noticed 'in' was common among all the words and I tried running * [in] * , however, this resulted in a lot of extra words. Then I realized these were the only words starting with their respective letters in the directory which led me to my solution.
 ```bash
-example triple ticks for bash
-pwn.college{helloworld}
+hacker@globbing~mixing-globs:~$ cd /challenge/files
+hacker@globbing~mixing-globs:/challenge/files$ /challenge/run [cep]*
+You got it! Here is your flag!
+pwn.college{YiOtBoznB0SNfxtU2h-96J-dmd7.QX1IDO0wSM5kjNzEzW}
 ```
-
 ## What I learned
-explain what you learned
+I learned how we can mix multiple file globs to find files under certain constraints. 
 
 # 7. Exclusionary globbing
-type what the challenge asks
+> This challenge introduces us to the concept of exclusionary globbing.
 
 ## My solve
-**Flag:** `pwn.college{helloworld}`
+**Flag:** `pwn.college{gx3sD1AXHz2KoLAVp-2QZjPn5lW.QX2IDO0wSM5kjNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
 ```bash
-example triple ticks for bash
-pwn.college{helloworld}
+hacker@globbing~exclusionary-globbing:~$ cd /challenge/files
+hacker@globbing~exclusionary-globbing:/challenge/files$ ls
+amazing    challenging  educational  great  incredible  kind      magical  optimistic  queenly  splendid   uplifting   wonderful  youthful
+beautiful  delightful   fantastic    happy  jovial      laughing  nice     pwning      radiant  thrilling  victorious  xenial     zesty
+hacker@globbing~exclusionary-globbing:/challenge/files$ /challenge/run [^pwn]*
+You got it! Here is your flag!
+pwn.college{gx3sD1AXHz2KoLAVp-2QZjPn5lW.QX2IDO0wSM5kjNzEzW}
 ```
 
 ## What I learned
-explain what you learned
+Exclusionary globbing logically works like the **NOT** operator. It can be used either with ! or ^(for newer shells). 
 
 # 8. Tab completion
-type what the challenge asks
+This challenge teaches us about an actual autocomplete feautre in the linux filesystem.
 
 ## My solve
 **Flag:** `pwn.college{helloworld}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
 ```bash
-example triple ticks for bash
-pwn.college{helloworld}
+hacker@dojo:~$ ls /challenge
+DESCRIPTION.md  pwncollege
+hacker@dojo:~$ cat /challenge/pwncollege
+cat: /challenge/pwncollege: No such file or directory
+hacker@dojo:~$ cat /challenge/pwn<TAB>
+pwn.college{0V6gjt68IRfqnIfST22MVl4XBXw.0FN0EzNxwSM5kjNzEzW}
 ```
 
 ## What I learned
-explain what you learned
+I learned that using * to shorten what must be typed on the command line can lead to mistakes, a safer alternative is pressing the tab key after typing part of the command.
 
 # 9. Multiple options for tab completion
-type what the challenge asks
+This challenge is an extension of the previous challenge with multiple options for tab completion.
 
 ## My solve
-**Flag:** `pwn.college{helloworld}`
+**Flag:** `pwn.college{oABtZ0hjEI5Wytq0pyWhmrcfNg5.0lN0EzNxwSM5kjNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
 ```bash
-example triple ticks for bash
-pwn.college{helloworld}
+hacker@globbing~multiple-options-for-tab-completion:~$ /challenge/files/pwn
+pwn                    pwn-the-planet         pwncollege-flamingo    pwncollege-hacking     
+pwn-college            pwncollege-family      pwncollege-flyswatter  
+hacker@globbing~multiple-options-for-tab-completion:~$ cd /challenge/files
+hacker@globbing~multiple-options-for-tab-completion:/challenge/files$ ls
+No ls for you in this level! Use tab-completion instead!
+hacker@globbing~multiple-options-for-tab-completion:/challenge/files$ 
+Display all 2339 possibilities? (y or n)
+hacker@globbing~multiple-options-for-tab-completion:/challenge/files$ cat pwncollege-family 
+No flag in this file!
+hacker@globbing~multiple-options-for-tab-completion:/challenge/files$ cat pwncollege-flyswatter 
+No flag in this file!
+hacker@globbing~multiple-options-for-tab-completion:/challenge/files$ cat pwncollege-hacking 
+No flag in this file!
+hacker@globbing~multiple-options-for-tab-completion:/challenge/files$ cat pwn-college 
+No flag in this file!
+hacker@globbing~multiple-options-for-tab-completion:/challenge/files$ cat pwncollege-fla
+pwncollege-flag      pwncollege-flamingo  
+hacker@globbing~multiple-options-for-tab-completion:/challenge/files$ cat pwncollege-flamingo 
+No flag in this file!
+hacker@globbing~multiple-options-for-tab-completion:/challenge/files$ cat pwncollege-flag
+pwn.college{oABtZ0hjEI5Wytq0pyWhmrcfNg5.0lN0EzNxwSM5kjNzEzW}
 ```
 
 ## What I learned
-explain what you learned
+This challenge taught me how useful tabbing and the command history feautre are. I had to reuse commands multiple times to find the flag in this challenge.
 
 # 10. Tab completion on commands 
-type what the challenge asks
+This level has a command that starts with pwncollege, and it'll give you the flag on auto-completing it.
 
 ## My solve
 **Flag:** `pwn.college{helloworld}`
