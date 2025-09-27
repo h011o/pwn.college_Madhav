@@ -194,7 +194,7 @@ pwn.college{gx3sD1AXHz2KoLAVp-2QZjPn5lW.QX2IDO0wSM5kjNzEzW}
 Exclusionary globbing logically works like the **NOT** operator. It can be used either with ! or ^(for newer shells). 
 
 # 8. Tab completion
-This challenge teaches us about an actual autocomplete feautre in the linux filesystem - the 'tab'.
+> This challenge teaches us about an actual autocomplete feautre in the linux filesystem - the 'tab'.
 
 ## My solve
 **Flag:** `pwn.college{0V6gjt68IRfqnIfST22MVl4XBXw.0FN0EzNxwSM5kjNzEzW}`
@@ -212,7 +212,7 @@ pwn.college{0V6gjt68IRfqnIfST22MVl4XBXw.0FN0EzNxwSM5kjNzEzW}
 I learned that using * to shorten what must be typed on the command line can lead to mistakes, a safer alternative is pressing the tab key after typing part of the command.
 
 # 9. Multiple options for tab completion
-This challenge is an extension of the previous challenge with multiple options for tab completion.
+> This challenge is an extension of the previous challenge with multiple options for tab completion.
 
 ## My solve
 **Flag:** `pwn.college{oABtZ0hjEI5Wytq0pyWhmrcfNg5.0lN0EzNxwSM5kjNzEzW}`
@@ -246,7 +246,7 @@ pwn.college{oABtZ0hjEI5Wytq0pyWhmrcfNg5.0lN0EzNxwSM5kjNzEzW}
 This challenge taught me how useful tabbing and the command history feautre are. I had to reuse commands multiple times to find the flag in this challenge.
 
 # 10. Tab completion on commands 
-This level has a command that starts with pwncollege, and it'll give you the flag on auto-completing it.
+> This level has a command that starts with pwncollege, and it'll give you the flag on auto-completing it.
 
 ## My solve
 **Flag:** `pwn.college{Eq7zuADdZ6nSBxvLi6dgJ0feJoS.0VN0EzNxwSM5kjNzEzW}`
