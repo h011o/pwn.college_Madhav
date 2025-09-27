@@ -194,10 +194,10 @@ pwn.college{gx3sD1AXHz2KoLAVp-2QZjPn5lW.QX2IDO0wSM5kjNzEzW}
 Exclusionary globbing logically works like the **NOT** operator. It can be used either with ! or ^(for newer shells). 
 
 # 8. Tab completion
-This challenge teaches us about an actual autocomplete feautre in the linux filesystem.
+This challenge teaches us about an actual autocomplete feautre in the linux filesystem - the 'tab'.
 
 ## My solve
-**Flag:** `pwn.college{helloworld}`
+**Flag:** `pwn.college{0V6gjt68IRfqnIfST22MVl4XBXw.0FN0EzNxwSM5kjNzEzW}`
 
 ```bash
 hacker@dojo:~$ ls /challenge
@@ -270,7 +270,11 @@ pwn.college{Eq7zuADdZ6nSBxvLi6dgJ0feJoS.0VN0EzNxwSM5kjNzEzW}
 I learned how tab commands can be used for autocompleting programs aswell.
 
 # Summary
-
+*  ? is used to autocomplete single characters.
+*  * is used to autocomplete multi characters.
+*  [] is used to autocomplete a single character from a set of characters.
+*  [^ ] is the inverse glob to discard specific single characters.
+*  The tab key can be pressed to autocomplete both single and multi characters.
 
 
 
