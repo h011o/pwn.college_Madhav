@@ -249,16 +249,28 @@ This challenge taught me how useful tabbing and the command history feautre are.
 This level has a command that starts with pwncollege, and it'll give you the flag on auto-completing it.
 
 ## My solve
-**Flag:** `pwn.college{helloworld}`
+**Flag:** `pwn.college{Eq7zuADdZ6nSBxvLi6dgJ0feJoS.0VN0EzNxwSM5kjNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+for some reason pwncollege wasnt auto-completing the first time I tried pressing tab, it simply listed some files. After I switched directories and came back to home, it worked like it was supposed to.
+
 ```bash
-example triple ticks for bash
-pwn.college{helloworld}
+hacker@globbing~tab-completion-on-commands:~$ pwncollege 
+.bash_history  .config/       .lesshst
+hacker@globbing~tab-completion-on-commands:~$ cd /challenge
+hacker@globbing~tab-completion-on-commands:/challenge$ pwncollege 
+.bashrc         .init           DESCRIPTION.md  bin/
+hacker@globbing~tab-completion-on-commands:/challenge$ cd
+hacker@globbing~tab-completion-on-commands:~$ pwncollege-6597 
+Correct! Here is your flag:
+pwn.college{Eq7zuADdZ6nSBxvLi6dgJ0feJoS.0VN0EzNxwSM5kjNzEzW}
+
 ```
 
 ## What I learned
-explain what you learned
+I learned how tab commands can be used for autocompleting programs aswell.
+
+# Summary
+
 
 
 
