@@ -121,15 +121,63 @@ Correct usage! Your flag: pwn.college{UsziKakic40YTEV_gviftUIx5HB.QX2EDO0wSM5kjN
 > This challenge teaches us how to read a specific programs documentation using --help.
 
 ## My solve
-**Flag:** ``
-
+**Flag:** `pwn.college{M0J4gyhM7wnhNPLTxyGGk9ffi6K.QX3IDO0wSM5kjNzEzW}`
 
 ```bash
+hacker@man~helpful-programs:~$ --help
+bash: --help: command not found
+hacker@man~helpful-programs:~$ /challenge/challenge --help
+usage: a challenge to make you ask for help [-h] [--fortune] [-v] [-g GIVE_THE_FLAG] [-p]
 
+optional arguments:
+  -h, --help            show this help message and exit
+  --fortune             read your fortune
+  -v, --version         get the version number
+  -g GIVE_THE_FLAG, --give-the-flag GIVE_THE_FLAG
+                        get the flag, if given the correct value
+  -p, --print-value     print the value that will cause the -g option to give you the flag
+hacker@man~helpful-programs:~$ /challenge/challenge -g GIVE_THE_FLAG
+usage: a challenge to make you ask for help [-h] [--fortune] [-v] [-g GIVE_THE_FLAG] [-p]
+a challenge to make you ask for help: error: argument -g/--give-the-flag: invalid int value: 'GIVE_THE_FLAG'
+hacker@man~helpful-programs:~$ /challenge/challenge -p
+The secret value is: 47
+hacker@man~helpful-programs:~$ /challenge/challenge -g 47
+Correct usage! Your flag: pwn.college{M0J4gyhM7wnhNPLTxyGGk9ffi6K.QX3IDO0wSM5kjNzEzW}
 ```
 
 ## What I learned
-> 
+> I learned about how programs can also have documentation invoked with by commands like --help.
+
+# 7. Help for Builtins
+> This challenge introduces us to Builtins.
+
+## My solve
+**Flag:** `pwn.college{M0J4gyhM7wnhNPLTxyGGk9ffi6K.QX3IDO0wSM5kjNzEzW}`
+
+```bash
+hacker@man~help-for-builtins:~$ help challenge
+challenge: challenge [--fortune] [--version] [--secret SECRET]
+    This builtin command will read you the flag, given the right arguments!
+    
+    Options:
+      --fortune         display a fortune
+      --version         display the version
+      --secret VALUE    prints the flag, if VALUE is correct
+
+    You must be sure to provide the right value to --secret. That value
+    is "Ug9lDnan".
+hacker@man~help-for-builtins:~$ challenge --secret Ug91Dnan
+ERROR: incorrect argument to --secret. Read the help!
+hacker@man~help-for-builtins:~$ challenge --secret "Ug9lDnan"
+Correct! Here is your flag!
+pwn.college{Ug9lDnan8NSleD9xkIVhlCsT-nT.QX0ETO0wSM5kjNzEzW}
+```
+
+## What I learned
+> Builtins are linux commands that are built in directly to the shell itself. THey modify the shell rather than working on external programs. 
+
+
+
 
 
 
