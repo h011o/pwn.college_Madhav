@@ -15,22 +15,29 @@
 14. Named pipes 
    
 # 1. Redirecting output
-This challenge asks you to invoke the hello command to get the flag.
+In this challenge, you must use output redirection to write the word PWN into COLLEGE.
 
 ## My solve
-**Flag:** `pwn.college{cJN2__KOOkXeKU38nVt-B5hT-QD.QX3YjM1wSM5kjNzEzW}`
+**Flag:** `pwn.college{M8DyuELHvy35ijqdQnCqRs7X9AP.QX0YTN0wSM5kjNzEzW}`
 ```bash
-hacker@hello~intro-to-commands:~$ whoami
-hacker
-hacker@hello~intro-to-commands:~$ Hello
-bash: Hello: command not found
-hacker@hello~intro-to-commands:~$ hello
-Success! Here is your flag:
-pwn.college{cJN2__KOOkXeKU38nVt-B5hT-QD.QX3YjM1wSM5kjNzEzW}
+hacker@piping~redirecting-output:~$ echo PWN > COLLEGE
+Correct! You successfully redirected 'PWN' to the file 'COLLEGE'! Here is your 
+flag:pwn.college{M8DyuELHvy35ijqdQnCqRs7X9AP.QX0YTN0wSM5kjNzEzW}
 ```
 
 ## What I learned 
-I learnt how the promt for the linux terminal is written as **username@hostname:~$**, where the $ symbol means that the user does not have administrative privileges whereas the # symbol means the user is an administrator. I also learnt how linux is case sensitive which means Hello does not provide the same output as hello does.
+I learnt how we can use the '>' operator to redirect a specific output to a single command. This is done using the echo command.
 
-## References 
-None
+# 2. Redirecting more output
+In this challenge, you must use the output redirection to write the word PWN.
+
+## My solve
+**Flag:** `pwn.college{M8DyuELHvy35ijqdQnCqRs7X9AP.QX0YTN0wSM5kjNzEzW}`
+```bash
+hacker@piping~redirecting-output:~$ echo PWN > COLLEGE
+Correct! You successfully redirected 'PWN' to the file 'COLLEGE'! Here is your 
+flag:pwn.college{M8DyuELHvy35ijqdQnCqRs7X9AP.QX0YTN0wSM5kjNzEzW}
+```
+
+## What I learned 
+I learnt how we can use the '>' operator to redirect a specific output to a single command. This is done using the echo command.
