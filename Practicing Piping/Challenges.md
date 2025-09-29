@@ -369,7 +369,7 @@ In this challenge, you must use process substitution along with pipes to get our
 ## My solve
 **Flag:** `pwn.college{0bYga9o9p4w54Czsj5rFwMC3NbW.QXwgDN1wSM5kjNzEzW}`
 
-This challenge requires a mix of the previous concepts to get our flag. We know that the syntax of the pipe is of the form output | input, therefore for our first step we know that /challenge/hack takes the position of the output. Then we learned how tee was used to duplicate output so we use that to duplicate our output. 
+This challenge requires a mix of the previous concepts to get our flag. We know the syntax of the pipe is output | input, so /challenge/hack is the output (left side). We use tee to duplicate that output and the other copy is written to a temporary file created by process substitution >(/challenge/the). That pipe is connected to the stdin of /challenge/the, so /challenge/the runs and receives the same input.
 
 ```bash
 hacker@piping~writing-to-multiple-programs:~$ /challenge/hack | tee >( /challenge/the ) | /challenge/planet
@@ -379,8 +379,7 @@ pwn.college{0bYga9o9p4w54Czsj5rFwMC3NbW.QXwgDN1wSM5kjNzEzW}
 ```
 
 ## What I learned 
-I learnt how we can use the '>' operator to redirect a specific output to a single command. 
-The data present on the left of the > operator is directed to its right.
+I learned how despite being very powerful, process substitution is a very specialized tool.
 
 
 
