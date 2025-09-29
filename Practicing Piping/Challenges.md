@@ -307,7 +307,7 @@ hacker@piping~filtering-with-grep-v:~$
 grep-v is used to remove specific content from the data of a file, so it works sort of like a filter for our pipe. 
 
 # 10. Duplicated piped data with tee
-> This challenge introduces us to the tee command and helps us understand why its useful. 
+> This challenge introduces us to the 'tee' command and helps us understand why its useful. 
 
 ## My solve
 **Flag:** `pwn.college{0IXu2vdmiMXq9B0HJeClsBXWudg.QXxITO0wSM5kjNzEzW}`
@@ -363,7 +363,24 @@ hacker@piping~process-substitution-for-input:~$ diff <(/challenge/print_decoys) 
 ## What I learned 
 Process substitution in Linux is important because it allows commands to be treated as files, enabling more flexible and efficient operations without creating temporary files. 
 
+# 12. Writing to Multiple programs
+In this challenge, you must use process substitution along with pipes to get our flag. We are asked to run the /challenge/hack command, and duplicate its output as input to both the /challenge/the and the /challenge/planet commands.
 
+## My solve
+**Flag:** `pwn.college{0bYga9o9p4w54Czsj5rFwMC3NbW.QXwgDN1wSM5kjNzEzW}`
+
+This challenge requires a mix of the previous concepts to get our flag. We know that the syntax of the pipe is of the form output | input, therefore for our first step we know that /challenge/hack takes the position of the output. Then we learned how tee was used to duplicate output so we use that to duplicate our output. 
+
+```bash
+hacker@piping~writing-to-multiple-programs:~$ /challenge/hack | tee >( /challenge/the ) | /challenge/planet
+Congratulations, you have duplicated data into the input of two programs! Here 
+is your flag:
+pwn.college{0bYga9o9p4w54Czsj5rFwMC3NbW.QXwgDN1wSM5kjNzEzW}
+```
+
+## What I learned 
+I learnt how we can use the '>' operator to redirect a specific output to a single command. 
+The data present on the left of the > operator is directed to its right.
 
 
 
