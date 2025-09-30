@@ -381,5 +381,20 @@ pwn.college{0bYga9o9p4w54Czsj5rFwMC3NbW.QXwgDN1wSM5kjNzEzW}
 ## What I learned 
 I learned how despite being very powerful, process substitution is a very specialized tool.
 
+# 13. Split-piping stderr and stdout 
+In this challenge, you have:
+
+/challenge/hack: this produces data on stdout and stderr
+/challenge/the: you must redirect hack's stderr to this program
+/challenge/planet: you must redirect hack's stdout to this programnds.
+
+## My solve
+**Flag:** `pwn.college{0bYga9o9p4w54Czsj5rFwMC3NbW.QXwgDN1wSM5kjNzEzW}`
 
 
+
+```bash
+
+```
+
+## What I learned 
