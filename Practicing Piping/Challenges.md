@@ -389,12 +389,51 @@ In this challenge, you have:
 /challenge/planet: you must redirect hack's stdout to this programnds.
 
 ## My solve
-**Flag:** `pwn.college{0bYga9o9p4w54Czsj5rFwMC3NbW.QXwgDN1wSM5kjNzEzW}`
+**Flag:** `pwn.college{k9ZhhO3YIbBQT_0HjZO2PjwMbcI.QXxQDM2wSM5kjNzEzW}`
 
-
-
+THis challenge took a lot of trail and error. The main idea of the challenge was to redirect stderr of the 'hack' program to 'the' without redirecting it to stdout at the same time. This was tricky because using 2>& 1 redirects stderr to stdout first for it to be able to be piped. We also had to pipe the stdout of hack to the 'planet' program.
+This is where program substitution came in use, it helped me create a temporary file to store stderr while at the same time the stdout of hack was getting piped to planet. 
 ```bash
-
+hacker@piping~split-piping-stderr-and-stdout:~$ /challenge/hack 2> >(/challenge/the) | /challenge/planet
+Congratulations, you have learned a redirection technique that even experts 
+struggle with! Here is your flag:
+pwn.college{k9ZhhO3YIbBQT_0HjZO2PjwMbcI.QXxQDM2wSM5kjNzEzW}
 ```
 
-## What I learned 
+## What I learned
+I learned how to split pipe stderr and stdout. 
+
+# 14. Named Pipes 
+In this challenge, you have:
+
+/challenge/hack: this produces data on stdout and stderr
+/challenge/the: you must redirect hack's stderr to this program
+/challenge/planet: you must redirect hack's stdout to this programnds.
+
+## My solve
+**Flag:** `pwn.college{8pPMZzaT7kdoST-Tuwdh0guTt8z.01MzMDOxwSM5kjNzEzW}`
+
+I had to open the terminal on two pages to solve this challenge since one of them opens in write mode and the other has to be in read mode. 
+
+terminal 1 (writing)
+```bash
+hacker@piping~named-pipes:~$ mkfifo /tmp/flag_fifo
+hacker@piping~named-pipes:~$ /challenge/run > /tmp/flag_fifo
+You're successfully redirecting /challenge/run to a FIFO at /tmp/flag_fifo! 
+Bash will now try to open the FIFO for writing, to pass it as the stdout of 
+/challenge/run. Recall that operations on FIFOs will *block* until both the 
+read side and the write side is open, so /challenge/run will not actually be 
+launched until you start reading from the FIFO!
+hacker@piping~named-pipes:~$ 
+```
+terminal 2 (reading) 
+```bash
+hacker@piping~named-pipes:~$ cat /tmp/flag_fifo
+You've correctly redirected /challenge/run's stdout to a FIFO at 
+/tmp/flag_fifo! Here is your flag:
+pwn.college{8pPMZzaT7kdoST-Tuwdh0guTt8z.01MzMDOxwSM5kjNzEzW}
+```
+
+## What I learned
+I learned how I can make my own pipes (similar to process substitution) called FIFO's. This is using the mkfifo command. FIFO's work only when both sides of the pipes are connected (read and write). 
+
