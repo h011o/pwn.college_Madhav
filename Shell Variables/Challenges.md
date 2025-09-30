@@ -150,7 +150,7 @@ pwn.college{ECj3rockODUACUl58_rigKvgT7E.QX4cTN0wSM5kjNzEzW}
 ## What I learned
 > The read command is used to accept data from the user. I also noticed how while using read we dont need the $, like we learned in a previosu challenge, the $ symbol is used the access variables and expand them. Here the data is inputed so variable expansion is not needed. 
 
-# 7. Reading files
+# 8. Reading files
 > This challenge needs us to read a file into an environment variable.  
 
 ## My solve
