@@ -164,6 +164,6 @@ pwn.college{wG30GXoH79QVwbBTnPnyC4SfZ9e.QXwIDO0wSM5kjNzEzW}
 ```
 
 ## What I learned
-> I learnt another way of inputting data into PWN using the (<) input redirection. 
+> I learnt another way of inputing data into PWN using the concept of (<) input redirection. 
 
  
