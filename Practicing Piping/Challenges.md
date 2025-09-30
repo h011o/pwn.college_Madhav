@@ -404,11 +404,7 @@ pwn.college{k9ZhhO3YIbBQT_0HjZO2PjwMbcI.QXxQDM2wSM5kjNzEzW}
 I learned how to split pipe stderr and stdout. 
 
 # 14. Named Pipes 
-In this challenge, you have:
-
-/challenge/hack: this produces data on stdout and stderr
-/challenge/the: you must redirect hack's stderr to this program
-/challenge/planet: you must redirect hack's stdout to this programnds.
+> This challenge introduces us to the concept of FIFO ( First In First Out)
 
 ## My solve
 **Flag:** `pwn.college{8pPMZzaT7kdoST-Tuwdh0guTt8z.01MzMDOxwSM5kjNzEzW}`
