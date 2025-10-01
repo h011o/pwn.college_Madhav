@@ -107,7 +107,7 @@ mode!
 > will create a new output file every time, deleting the old contents. A workaround to this is to use >> to redirect data.
 
 # 4. Redirecting errors 
-This challenge teaches us about file descriptors.
+> This challenge teaches us about file descriptors.
 
 ## My solve
 **Flag:** `pwn.college{Ekqs_EXB7n1y5fMFjjQPUSaPKYq.QX3YTN0wSM5kjNzEzW}`
@@ -139,11 +139,11 @@ hacker@piping~redirecting-errors:~$ cat myflag
 ```
 
 ## What I leared
-A File Descriptor (FD) is a number that describes a communication channel in Linux. 
-FD 0: Standard Input
-FD 1: Standard Output
-FD 2: Standard Error
-We use these numbers to redirect data to their specific channels before the > 
+> A File Descriptor (FD) is a number that describes a communication channel in Linux. 
+> FD 0: Standard Input
+> FD 1: Standard Output
+> FD 2: Standard Error
+> We use these numbers to redirect data to their specific channels before the > 
 
 # 5. Redirecting input
 > This challenge needs us to direct input to programs.
@@ -239,7 +239,7 @@ pwn.college{89KI9igYsuiHIt8_guojUkFhi0c.QX5EDO0wSM5kjNzEzW}
 > Standard output from the command to the left of the pipe will be connected to the standard input of the command to the right of the pipe. Pipe can be used to reduce the lines required to complete a task.
 
 # 8. Grepping errors 
-This challenge introduces us to the concept of error grepping, similar to error redirection using file descriptor (2>)
+>This challenge introduces us to the concept of error grepping, similar to error redirection using file descriptor (2>)
 
 ## My solve
 **Flag:** `pwn.college{YKT6fEtYXvd6c7BLoEjvIyOF9hj.QX1ATO0wSM5kjNzEzW}`
@@ -304,7 +304,7 @@ hacker@piping~filtering-with-grep-v:~$
 ```
 
 ## What I learned 
-grep-v is used to remove specific content from the data of a file, so it works sort of like a filter for our pipe. 
+>grep-v is used to remove specific content from the data of a file, so it works sort of like a filter for our pipe. 
 
 # 10. Duplicated piped data with tee
 > This challenge introduces us to the 'tee' command and helps us understand why its useful. 
@@ -339,7 +339,7 @@ Great job! Here is your flag:
 ```
 
 ## What I learned 
-Tee is like the t-splitter in pipes, basically - this command duplicates data flowing through our pipes to any number of files provided. And helps us *see* the data as it flows through betwen commands  
+>Tee is like the t-splitter in pipes, basically - this command duplicates data flowing through our pipes to any number of files provided. And helps us *see* the data as it >flows through betwen commands  
 
 # 11. Process substitution for input
 > Here we learn about the elegant process substitution 
@@ -364,7 +364,7 @@ hacker@piping~process-substitution-for-input:~$ diff <(/challenge/print_decoys) 
 Process substitution in Linux is important because it allows commands to be treated as files, enabling more flexible and efficient operations without creating temporary files. 
 
 # 12. Writing to Multiple programs
-In this challenge, you must use process substitution along with pipes to get our flag. We are asked to run the /challenge/hack command, and duplicate its output as input to both the /challenge/the and the /challenge/planet commands.
+>In this challenge, you must use process substitution along with pipes to get our flag. We are asked to run the /challenge/hack command, and duplicate its output as input to >both the /challenge/the and the /challenge/planet commands.
 
 ## My solve
 **Flag:** `pwn.college{0bYga9o9p4w54Czsj5rFwMC3NbW.QXwgDN1wSM5kjNzEzW}`
@@ -382,7 +382,7 @@ pwn.college{0bYga9o9p4w54Czsj5rFwMC3NbW.QXwgDN1wSM5kjNzEzW}
 I learned how despite being very powerful, process substitution is a very specialized tool.
 
 # 13. Split-piping stderr and stdout 
-In this challenge, you have:
+> In this challenge, you have:
 
 /challenge/hack: this produces data on stdout and stderr
 /challenge/the: you must redirect hack's stderr to this program
@@ -401,7 +401,7 @@ pwn.college{k9ZhhO3YIbBQT_0HjZO2PjwMbcI.QXxQDM2wSM5kjNzEzW}
 ```
 
 ## What I learned
-I learned how to split pipe stderr and stdout. 
+> I learned how to split pipe stderr and stdout. 
 
 # 14. Named Pipes 
 > This challenge introduces us to the concept of FIFO ( First In First Out)
@@ -431,5 +431,5 @@ pwn.college{8pPMZzaT7kdoST-Tuwdh0guTt8z.01MzMDOxwSM5kjNzEzW}
 ```
 
 ## What I learned
-I learned how I can make my own pipes (similar to process substitution) called FIFO's. This is using the mkfifo command. FIFO's work only when both sides of the pipes are connected (read and write). 
+>I learned how I can make my own pipes (similar to process substitution) called FIFO's. This is using the mkfifo command. FIFO's work only when both sides of the pipes are > connected (read and write). 
 
