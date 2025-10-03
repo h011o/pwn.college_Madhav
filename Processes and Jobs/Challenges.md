@@ -264,4 +264,76 @@ pwn.college{8lwFeWE6oX1g7eLbjbEm1GXDFlK.0FNzMDOxwSM5kjNzEzW}
 ```
 
 ## What I learned 
-> Linux pipes are buffered, they have a sort of length through which data flows. If the data already entered the pipe, it flows through the end (till my cat) despite being killed. 
+> Linux pipes are buffered, they have a sort of length through which data flows. If the data already entered the pipe, it flows through the end (till my cat) despite being killed.
+
+# 5. Suspending processes
+> This challenge is similar to interrupting processes, it tells us how to suspend processes.
+
+## My solve
+**Flag:** `pwn.college{cH2OE8mggfkKUCDxlqwuCYNEnnU.QX1QDO0wSM5kjNzEzW}`
+```bash
+hacker@processes~suspending-processes:~$ /challenge/run
+I'll only give you the flag if there's already another copy of me running in 
+this terminal... Let's check!
+
+UID          PID    PPID  C STIME TTY          TIME CMD
+root         146     136  0 18:50 pts/0    00:00:00 bash /challenge/run
+root         148     146  0 18:50 pts/0    00:00:00 ps -f
+
+I don't see a second me!
+
+To pass this level, you need to suspend me and launch me again! You can 
+background me with Ctrl-Z or, if you're not ready to do that for whatever 
+reason, just hit Enter and I'll exit!
+^Z
+[1]+  Stopped                 /challenge/run
+hacker@processes~suspending-processes:~$ /challenge/run
+I'll only give you the flag if there's already another copy of me running in 
+this terminal... Let's check!
+
+UID          PID    PPID  C STIME TTY          TIME CMD
+root         146     136  0 18:50 pts/0    00:00:00 bash /challenge/run
+root         153     136  0 18:50 pts/0    00:00:00 bash /challenge/run
+root         155     153  0 18:50 pts/0    00:00:00 ps -f
+
+Yay, I found another version of me! Here is the flag:
+pwn.college{cH2OE8mggfkKUCDxlqwuCYNEnnU.QX1QDO0wSM5kjNzEzW}
+```
+
+## What I learned 
+> Ctrl + Z can be used to suspend process. A copy of a suspended process can be ran at the same time in the same terminal.
+
+# 6. Resuming Processes
+> This challenge tells us how to resume suspending processes.
+
+## My solve
+**Flag:** `pwn.college{AeQDB39G9W2Th54fi1OI2MsgOz-.QX2QDO0wSM5kjNzEzW}`
+```bash
+hacker@processes~resuming-processes:~$ /challenge/run
+Let's practice resuming processes! Suspend me with Ctrl-Z, then resume me with 
+the 'fg' command! Or just press Enter to quit me!
+^Z
+[1]+  Stopped                 /challenge/run
+hacker@processes~resuming-processes:~$ fg
+/challenge/run
+I'm back! Here's your flag:
+pwn.college{AeQDB39G9W2Th54fi1OI2MsgOz-.QX2QDO0wSM5kjNzEzW}
+Don't forget to press Enter to quit me!
+```
+
+## What I learned 
+> The 'fg' command is used to resume suspended processes. I experimented a bit and I found out that if there are multiple copies of a suspended proess, fg resumes the one that was suspended first.
+
+# 7. Backgrounding Processes
+> This challenge tells us 
+
+## My solve
+**Flag:** ``
+```bash
+
+```
+
+## What I learned 
+> The 
+
+  
