@@ -74,3 +74,20 @@ pwn.college{ohzwnbJZ9UOtnErfH2JdUV4Ko7G.QXyQDO0wSM5kjNzEzW}
 
 ## What I learned 
 > The 'kill' command is sort of like the 'end task' button in windows task manager. Every process has a 'PID' which is the process identifier used to kill the process.
+
+# 3. Interrupting processes
+> This challenge tells us how to get rid of processes that clog up the terminal
+
+## My solve
+**Flag:** `pwn.college{ohzwnbJZ9UOtnErfH2JdUV4Ko7G.QXyQDO0wSM5kjNzEzW}`
+```bash
+hacker@processes~interrupting-processes:~$ /challenge/run
+I could give you the flag... but I won't, until this process exits. Remember, 
+you can force me to exit with Ctrl-C. Try it now!
+^C
+Good job! You have used Ctrl-C to interrupt this process! Here is your flag:
+pwn.college{UOg82hjnReoMXHPIVJvNbRq3b3I.QXzQDO0wSM5kjNzEzW}
+```
+
+## What I learned 
+> Its very interesting that the hotkey to interrupt process in terminal is the same as the copy shortcut. That explains why I've failed all the times I've tried to paste commands without using command history.
