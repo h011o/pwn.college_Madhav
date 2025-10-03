@@ -90,4 +90,4 @@ pwn.college{UOg82hjnReoMXHPIVJvNbRq3b3I.QXzQDO0wSM5kjNzEzW}
 ```
 
 ## What I learned 
-> Its very interesting that the hotkey to interrupt process in terminal is the same as the copy shortcut. That explains why I've failed all the times I've tried to paste commands without using command history.
+> Its very interesting that the hotkey to interrupt process in terminal is the same as the copy shortcut. That explains why I've failed all the times I've tried to paste commands instead of using command history.
