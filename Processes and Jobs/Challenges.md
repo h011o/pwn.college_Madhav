@@ -49,3 +49,28 @@ Now I will sleep for a while (so that you could find me with
 > ps is used to identify every process in the linux environment.
 > -ef argument can be used to list every process in full format output. (standard syntax)
 > ps -ef differes from ps - aux in the way that it outputs the parent process id while ps-aux outputs stuff such as total system CPU and memory.
+
+# 2. Killing processes
+> This challenge tells us about the process termination command  'kill'
+
+## My solve
+**Flag:** `pwn.college{ohzwnbJZ9UOtnErfH2JdUV4Ko7G.QXyQDO0wSM5kjNzEzW}`
+```bash
+hacker@processes~killing-processes:~$ ps -aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.6  0.0   1056   640 ?        Ss   18:31   0:00 /sbin/docker-init -- /nix/var/nix/profiles/dojo-workspace/bin/dojo-init /run/d
+root           7  0.4  0.0 231708  2560 ?        S    18:31   0:00 /run/dojo/bin/sleep 6h
+root         135  0.0  0.0   5204  3520 ?        S    18:31   0:00 su -c /challenge/.launcher hacker
+hacker       136  0.0  0.0 231576  3520 ?        Ss   18:31   0:00 /challenge/dont_run
+hacker       137  0.0  0.0 231708  2560 ?        S    18:31   0:00 sleep 6h
+hacker       148  0.4  0.0  36972 21760 ?        Sl   18:31   0:00 /nix/store/g0q8n7xfjp7znj41hcgrq893a9m0i474-ttyd-1.7.7/bin/ttyd --port 7681 --
+hacker       152  0.0  0.0 231940  4160 pts/0    Ss   18:31   0:00 /run/dojo/bin/bash --login
+hacker       162  0.0  0.0 233600  3840 pts/0    R+   18:31   0:00 ps -aux
+hacker@processes~killing-processes:~$ kill 136
+hacker@processes~killing-processes:~$ /challenge/run
+Great job! Here is your payment:
+pwn.college{ohzwnbJZ9UOtnErfH2JdUV4Ko7G.QXyQDO0wSM5kjNzEzW}
+```
+
+## What I learned 
+> The 'kill' command is sort of like the 'end task' button in windows task manager. Every process has a 'PID' which is the process identifier used to kill the process.
