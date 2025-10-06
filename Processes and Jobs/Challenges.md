@@ -371,50 +371,85 @@ pwn.college{oxAYDwWaBYzQa1X8n0wLeFwWz6p.QX3QDO0wSM5kjNzEzW}
 > You can resume processes in the background using the bg command. This will allow the process to keep running, while giving you your shell back to invoke more commands in the meantime.
 
 # 8. Foregrounding Processes
-> This challenge tells us how to foreground a background process with fg. 
+> This challenge tells us how to foreground a background process with fg.
+
 ## My solve
 **Flag:** `pwn.college{oxAYDwWaBYzQa1X8n0wLeFwWz6p.QX3QDO0wSM5kjNzEzW}`
 ```bash
-hacker@processes~backgrounding-processes:~$ /challenge/run
-I'll only give you the flag if there's already another copy of me running *and 
-not suspended* in this terminal... Let's check!
-
-UID          PID STAT CMD
-root         153 S+   bash /challenge/run
-root         155 R+   ps -o user=UID,pid,stat,cmd
-
-I don't see a second me!
-
+hacker@processes~foregrounding-processes:~$ /challenge/run
 To pass this level, you need to suspend me, resume the suspended process in the 
-background, and then launch a new version of me! You can background me with 
-Ctrl-Z (and resume me in the background with 'bg') or, if you're not ready to 
-do that for whatever reason, just hit Enter and I'll exit!
+background, and *then* foreground it without re-suspending it! You can 
+background me with Ctrl-Z (and resume me in the background with 'bg') or, if 
+you're not ready to do that for whatever reason, just hit Enter and I'll exit!
 ^Z
 [1]+  Stopped                 /challenge/run
-hacker@processes~backgrounding-processes:~$ bg /challenge/run
+hacker@processes~foregrounding-processes:~$ bg /challenge/run
 [1]+ /challenge/run &
-hacker@processes~backgrounding-processes:~$ 
+hacker@processes~foregrounding-processes:~$ 
 
 
 Yay, I'm now running the background! Because of that, this text will probably 
 overlap weirdly with the shell prompt. Don't panic; just hit Enter a few times 
-to scroll this text out.
+to scroll this text out. After that, resume me into the foreground with 'fg'; 
+I'll wait.
+
+hacker@processes~foregrounding-processes:~$ fg /challenge/run
 /challenge/run
-I'll only give you the flag if there's already another copy of me running *and 
-not suspended* in this terminal... Let's check!
+YES! Great job! I'm now running in the foreground. Hit Enter for your flag!
 
-UID          PID STAT CMD
-root         153 S    bash /challenge/run
-root         163 S    sleep 6h
-root         164 S+   bash /challenge/run
-root         166 R+   ps -o user=UID,pid,stat,cmd
-
-Yay, I found another version of me running in the background! Here is the flag:
-pwn.college{oxAYDwWaBYzQa1X8n0wLeFwWz6p.QX3QDO0wSM5kjNzEzW}
+pwn.college{EMEmS6yKMO2i3NHkg_4YG4yW5ed.QX4QDO0wSM5}
 ```
 
 ## What I learned 
-> You can resume processes in the background using the bg command. This will allow the process to keep running, while giving you your shell back to invoke more commands in the meantime.
+> This challenge tells us how to resume a background process with the fg command similar to resuming suspended processes.
+
+# 9. Starting backgrounded processes
+> This challenge tells us how to start off programs backgrounded from the start.
+
+## My solve
+**Flag:** `pwn.college{oxAYDwWaBYzQa1X8n0wLeFwWz6p.QX3QDO0wSM5kjNzEzW}`
+```bash
+hacker@processes~starting-backgrounded-processes:~$ /challenge/run &
+[1] 146
+hacker@processes~starting-backgrounded-processes:~$ 
+
+
+Yay, you started me in the background! Because of that, this text will probably 
+overlap weirdly with the shell prompt, but you're used to that by now...
+
+Anyways! Here is your flag!
+pwn.college{IN0-Qz9Pm28z8M_96pARqus7REE.QX5QDO0wSM5kjNzEzW}
+```
+
+## What I learned 
+> I learned how we can start process from the background directly using &.
+
+# 10. Process Exit Codes 
+> This challenge teaches us about the concept of exit codes and asks us to use it to find our flag.
+
+## My solve
+**Flag:** `pwn.college{oULR1yxOeEAQtC6kf3q4CNB_yol.QX5YDO1wSM5kjNzEzW}`
+```bash
+hacker@processes~process-exit-codes:~$ /challenge/get-code
+Exiting with an error code!
+hacker@processes~process-exit-codes:~$ echo $?
+167
+hacker@processes~process-exit-codes:~$ /challenge/submit-code 167
+CORRECT! Here is your flag:
+pwn.college{oULR1yxOeEAQtC6kf3q4CNB_yol.QX5YDO1wSM5kjNzEzW}
+```
+
+## What I learned 
+> I learned how commands that fail return '1' as their exit code while commands that succeed return '0'. Exit codes of the most recently terminated commands are found using $?.
+
+
+
+
+
+
+
+
+
 
 
   
