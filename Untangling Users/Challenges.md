@@ -75,14 +75,15 @@ pwn.college{AwFqLAA7n1cou7PCZ-Z5kKOZpvf.QX3UDN1wSM5kjNzEzW}
 > This challenge introduces us to the famous sudo command. 
 
 ## My solve
-**Flag:** ``
+**Flag:** `pwn.college{Ql2kVj4DAJjpC3Vv_qoxaJ0ahgv.QX4UDN1wSM5kjNzEzW}`
 
 ```bash
-
+hacker@users~using-sudo:~$ sudo cat /flag
+pwn.college{Ql2kVj4DAJjpC3Vv_qoxaJ0ahgv.QX4UDN1wSM5kjNzEzW}
 ```
 
 ## What I learned 
-> sudo defaults to running a command as root, unlike su it checks policies to determine if the user is authorized to run commands. 
+> sudo defaults to running a command as root, unlike su it checks policies to determine if the user is authorized to run commands. It is used in modern terminals.
 
    
 
