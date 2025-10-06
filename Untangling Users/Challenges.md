@@ -8,9 +8,12 @@
 > This challenge teaches us how to become root using the su (substitute user) command. 
 
 ## My solve
-**Flag:** ``
+**Flag:** `pwn.college{w3gBomWj2rVWpHvQIKJ4i74mJ8A.QX1UDN1wSM5kjNzEzW}`
 ```bash
-
+hacker@users~becoming-root-with-su:~$ su
+Password: 
+root@users~becoming-root-with-su:/home/hacker# cat /flag
+pwn.college{w3gBomWj2rVWpHvQIKJ4i74mJ8A.QX1UDN1wSM5kjNzEzW}
 ```
 
 ## What I learned 
