@@ -68,7 +68,18 @@ pwn.college{AwFqLAA7n1cou7PCZ-Z5kKOZpvf.QX3UDN1wSM5kjNzEzW}
 ## What I learned 
 > If a hacker gets their hands on a leaked /etc/shadow, they can start cracking passwords and wreaking havoc. 
 
+# 4. Using sudo    
+> This challenge introduces us to the famous sudo command. 
 
+## My solve
+**Flag:** ``
+
+```bash
+
+```
+
+## What I learned 
+> sudo defaults to running a command as root, unlike su it checks policies to determine if the user is authorized to run commands. 
 
    
 
