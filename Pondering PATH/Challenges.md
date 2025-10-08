@@ -12,7 +12,7 @@ This challenge makes it so that if the program can't find the rm command it give
 ## My solve
 **Flag:** `pwn.college{cJN2__KOOkXeKU38nVt-B5hT-QD.QX3YjM1wSM5kjNzEzW}`
 
-Without a PATH, bash cannot find the rm command. 
+Without a PATH, bash cannot find the rm command. So I replaced the shell's path with a useless value.
 ```bash
 hacker@path~the-path-variable:~$ PATH=" "
 hacker@path~the-path-variable:~$ rm /challenge/run
