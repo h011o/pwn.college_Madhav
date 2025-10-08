@@ -42,4 +42,23 @@ pwn.college{MlunExyU9zoATTANsKTItHJbdba.QX1cjM1wSM5kjNzEzW}
 ```
 
 ## What I learned 
->I learnt that we can set our PATH to whatever path we wish it to be, basically telling our shell to look for look in the given path while resolving plain command names. 
+>I learnt that we can set our PATH to whatever path we wish it to be, basically telling our shell to look for look in the given path while resolving plain command names.
+
+# 3. Finding Commands 
+>This challenge introduces us to the 'which' command to locate the directories of commands. 
+
+## My solve
+>**Flag:** `pwn.college{MlunExyU9zoATTANsKTItHJbdba.QX1cjM1wSM5kjNzEzW}`
+
+```bash
+hacker@path~setting-path:~$ PATH=/challenge/more_commands/
+hacker@path~setting-path:~$ /challenge/run
+Invoking 'win'....
+Congratulations! You properly set the flag and 'win' has launched!
+pwn.college{MlunExyU9zoATTANsKTItHJbdba.QX1cjM1wSM5kjNzEzW}
+```
+
+## What I learned 
+>I learnt that we can set our PATH to whatever path we wish it to be, basically telling our shell to look for look in the given path while resolving plain command names.
+
+
