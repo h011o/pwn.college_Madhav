@@ -118,14 +118,38 @@ pwn.college{wsEtEDuaKZLIuuFgq8OqAOxHmQu.QX4ETO0wSM5kjNzEzW}
 > This challenge needs us to execute our shell script without explicitly calling bash.
 
 ## My solve
-**Flag:** ``
+**Flag:** `pwn.college{MMvqK5wGUOBvYqD5PyWa4mZo8Xw.QX0cjM1wSM5kjNzEzW}`
 
 ```bash
+hacker@chaining~executable-shell-scripts:~$ echo /challenge/solve > script.sh
+hacker@chaining~executable-shell-scripts:~$ chmod +x script.sh
+hacker@chaining~executable-shell-scripts:~$ ./script.sh
+Congratulations on your shell script execution! Your flag:
+pwn.college{MMvqK5wGUOBvYqD5PyWa4mZo8Xw.QX0cjM1wSM5kjNzEzW}
 
 ```
-
 ## What I learned
->
+> we can make a shell script directly executeable by using the +chmod x command.
+
+# 7. Understand shebangs 
+> This challenge needs us to execute our shell script without explicitly calling bash. We run it by using ./[file].sh
+
+## My solve
+**Flag:** `pwn.college{MMvqK5wGUOBvYqD5PyWa4mZo8Xw.QX0cjM1wSM5kjNzEzW}`
+
+```bash
+hacker@chaining~executable-shell-scripts:~$ echo /challenge/solve > script.sh
+hacker@chaining~executable-shell-scripts:~$ chmod +x script.sh
+hacker@chaining~executable-shell-scripts:~$ ./script.sh
+Congratulations on your shell script execution! Your flag:
+pwn.college{MMvqK5wGUOBvYqD5PyWa4mZo8Xw.QX0cjM1wSM5kjNzEzW}
+
+```
+## What I learned
+> What shebang basically does is tell the terminal inststructions on how how to run the script.
+> #!/bin/bash means use bash to run this script
+
+
 
 
 
