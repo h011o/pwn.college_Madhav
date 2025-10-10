@@ -62,33 +62,44 @@ pwn.college{cdjrRzXIv69zlHPsbIJhmXl-uNd.01NzEzNxwSM5kjNzEzW}
 ```
 
 ## What I learned 
-> I learnt that we can set our PATH to whatever path we wish it to be, basically telling our shell to look for look in the given path while resolving plain command names.
+> I learnt that using which to find which directory our flag is located.
 
 
 # 4. Adding commands
->  
 
 ## My solve
->**Flag:** ``
+> **Flag:** `pwn.college{A1NIsYzw_RrTWAOoqmctVLKSLTL.QX2cjM1wSM5kjNzEzW}`
 
 ```bash
+hacker@path~adding-commands:~$ echo #!/bin/bash > /tmp/win
+hacker@path~adding-commands:~$ echo /bin/cat /flag >> /tmp/win
+hacker@path~adding-commands:~$ chmod +x /tmp/win
+hacker@path~adding-commands:~$ PATH=/tmp
+hacker@path~adding-commands:~$ /challenge/run
+Invoking 'win'....
+pwn.college{A1NIsYzw_RrTWAOoqmctVLKSLTL.QX2cjM1wSM5kjNzEzW}
 
 ```
 
 ## What I learned 
->
+> I learned how to create my own shell scripts and add them to PATH so they can be executed as commands from anywhere.
 
 # 5. Hijacking commands 
->  
 
 ## My solve
->**Flag:** ``
+> **Flag:** `pwn.college{MfJFqx4mLoFVpnnJkxl7kZrLoeU.QX3cjM1wSM5kjNzEzW}`
 
 ```bash
-
+hacker@path~hijacking-commands:~$ echo #!/bin/bash > /tmp/rm
+hacker@path~hijacking-commands:~$ echo /bin/cat /flag>> /tmp/rm
+hacker@path~hijacking-commands:~$ chmod +x /tmp/rm
+hacker@path~hijacking-commands:~$ PATH=/tmp
+hacker@path~hijacking-commands:~$ /challenge/run
+Trying to remove /flag...
+pwn.college{MfJFqx4mLoFVpnnJkxl7kZrLoeU.QX3cjM1wSM5kjNzEzW}
 ```
 
 ## What I learned 
->
+> I learned that by creating a fake version of a command (like rm) and placing it in a directory thats earlier in the PATH, I can intercept calls to that command.
 
 
