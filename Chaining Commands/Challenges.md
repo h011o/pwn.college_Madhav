@@ -97,22 +97,6 @@ pwn.college{wsEtEDuaKZLIuuFgq8OqAOxHmQu.QX4ETO0wSM5kjNzEzW}
 ## What I learned
 > In this challenge I learned how to combine shell scripts with piping.
 
-# 5. Redirecting Script output 
-> This challenge teaches us to send the output of several programs to one command.
-
-## My solve
-**Flag:** `pwn.college{wsEtEDuaKZLIuuFgq8OqAOxHmQu.QX4ETO0wSM5kjNzEzW}`
-
-```bash
-hacker@chaining~redirecting-script-output:~$ echo /challenge/pwn > script.sh
-hacker@chaining~redirecting-script-output:~$ echo /challenge/college >> script.sh
-hacker@chaining~redirecting-script-output:~$ bash script.sh | /challenge/solve
-Correct! Here is your flag:
-pwn.college{wsEtEDuaKZLIuuFgq8OqAOxHmQu.QX4ETO0wSM5kjNzEzW}
-```
-
-## What I learned
-> The challenge teaches us to combine shell scripts with piping.
 
 # 6. Executable Shell scripts 
 > This challenge needs us to execute our shell script without explicitly calling bash.
