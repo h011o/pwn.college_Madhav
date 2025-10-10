@@ -82,7 +82,6 @@ pwn.college{k3cGaK2FS9rGmsGKVTCgR2Ux2Kx.QXzcjM1wSM5kjNzEzW}
 > r - user/group/other can read the file (or list the directory)
 > w - user/group/other can modify the files (or create/delete files in the directory)
 > x - user/group/other can execute the file as a program (or can enter the directory, e.g., using `cd`)
-> - - nothing
 >  Syntax: chmod [OPTIONS] MODE FILE
 
 # 5. Executable Files
