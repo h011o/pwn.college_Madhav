@@ -100,6 +100,6 @@ pwn.college{MfJFqx4mLoFVpnnJkxl7kZrLoeU.QX3cjM1wSM5kjNzEzW}
 ```
 
 ## What I learned 
-> I learned that by creating a fake version of a command (like rm) and placing it in a directory thats earlier in the PATH, I can intercept calls to that command.
+> I learned that by creating a fake version of a command (like rm) and placing it in a directory thats earlier in the PATH, I can substitute the actual command
 
 
