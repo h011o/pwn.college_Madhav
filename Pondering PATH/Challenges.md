@@ -48,17 +48,34 @@ pwn.college{MlunExyU9zoATTANsKTItHJbdba.QX1cjM1wSM5kjNzEzW}
 >This challenge introduces us to the 'which' command to locate the directories of commands. 
 
 ## My solve
->**Flag:** `pwn.college{MlunExyU9zoATTANsKTItHJbdba.QX1cjM1wSM5kjNzEzW}`
+>**Flag:** `pwn.college{cdjrRzXIv69zlHPsbIJhmXl-uNd.01NzEzNxwSM5kjNzEzW}`
 
 ```bash
-hacker@path~setting-path:~$ PATH=/challenge/more_commands/
-hacker@path~setting-path:~$ /challenge/run
-Invoking 'win'....
-Congratulations! You properly set the flag and 'win' has launched!
-pwn.college{MlunExyU9zoATTANsKTItHJbdba.QX1cjM1wSM5kjNzEzW}
+hacker@path~finding-commands:~$ which win
+/challenge/paths/27930/win
+hacker@path~finding-commands:~$ cat /challenge/paths/27930/win
+#!/bin/bash
+
+/bin/fold -s <<< "Search for the flag in the same directory in which I am located!"
+hacker@path~finding-commands:~$ cat /challenge/paths/27930/flag
+pwn.college{cdjrRzXIv69zlHPsbIJhmXl-uNd.01NzEzNxwSM5kjNzEzW}
 ```
 
 ## What I learned 
 >I learnt that we can set our PATH to whatever path we wish it to be, basically telling our shell to look for look in the given path while resolving plain command names.
+
+
+# 5. Hijacking commands 
+>  
+
+## My solve
+>**Flag:** ``
+
+```bash
+
+```
+
+## What I learned 
+>
 
 
