@@ -62,8 +62,21 @@ pwn.college{cdjrRzXIv69zlHPsbIJhmXl-uNd.01NzEzNxwSM5kjNzEzW}
 ```
 
 ## What I learned 
->I learnt that we can set our PATH to whatever path we wish it to be, basically telling our shell to look for look in the given path while resolving plain command names.
+> I learnt that we can set our PATH to whatever path we wish it to be, basically telling our shell to look for look in the given path while resolving plain command names.
 
+
+# 4. Adding commands
+>  
+
+## My solve
+>**Flag:** ``
+
+```bash
+
+```
+
+## What I learned 
+>
 
 # 5. Hijacking commands 
 >  
