@@ -132,23 +132,139 @@ pwn.college{MMvqK5wGUOBvYqD5PyWa4mZo8Xw.QX0cjM1wSM5kjNzEzW}
 > we can make a shell script directly executeable by using the +chmod x command.
 
 # 7. Understand shebangs 
-> This challenge needs us to execute our shell script without explicitly calling bash. We run it by using ./[file].sh
+> This challenge introduces us to shebangs.
 
 ## My solve
-**Flag:** `pwn.college{MMvqK5wGUOBvYqD5PyWa4mZo8Xw.QX0cjM1wSM5kjNzEzW}`
+**Flag:** `pwn.college{kIROo5ajgnCqpNQANRobd_L8bW8.0VOzMDOxwSM5kjNzEzW}`
 
 ```bash
-hacker@chaining~executable-shell-scripts:~$ echo /challenge/solve > script.sh
-hacker@chaining~executable-shell-scripts:~$ chmod +x script.sh
-hacker@chaining~executable-shell-scripts:~$ ./script.sh
-Congratulations on your shell script execution! Your flag:
-pwn.college{MMvqK5wGUOBvYqD5PyWa4mZo8Xw.QX0cjM1wSM5kjNzEzW}
+hacker@chaining~understanding-shebangs:~$ echo #!/bin/bash > /home/hacker/solve.sh
+hacker@chaining~understanding-shebangs:~$ echo  echo "hack the planet" >> /home/hacker/solve.sh
+hacker@chaining~understanding-shebangs:~$ chmod a+x /home/hacker/solve.sh
+hacker@chaining~understanding-shebangs:~$ /challenge/run
+Testing your script...
+Perfect! Your flag:
+Flag: pwn.college{kIROo5ajgnCqpNQANRobd_L8bW8.0VOzMDOxwSM5kjNzEzW}
 
 ```
 ## What I learned
 > What shebang basically does is tell the terminal inststructions on how how to run the script.
 > #!/bin/bash means use bash to run this script
 
+# 8. Scripting with arguments
+> This challenge teaches us how to accept arguments
+
+## My solve
+**Flag:** `pwn.college{kIROo5ajgnCqpNQANRobd_L8bW8.0VOzMDOxwSM5kjNzEzW}`
+
+```bash
+hacker@chaining~scripting-with-arguments:~$ echo #!/bin/bash > /home/hacker/solve.sh
+hacker@chaining~scripting-with-arguments:~$ echo echo "$2 $1" >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-arguments:~$ chmod a+x /home/hacker/solve.sh
+hacker@chaining~scripting-with-arguments:~$ /challenge/run
+Correct! Your script properly reversed the arguments.
+Here's your flag:
+pwn.college{Q19PlaNSQXemM4EQOvA1k4ouHl0.0VNzMDOxwSM5kjNzEzW}
+
+```
+## What I learned
+> I learned how we can integrate arguments with scripts alongside shebang
+
+
+# 9. Scripting with conditionals
+
+## My solve
+**Flag:** `pwn.college{Q19PlaNSQXemM4EQOvA1k4ouHl0.0VNzMDOxwSM5kjNzEzW}`
+
+```bash
+hacker@chaining~scripting-with-arguments:~$ echo #!/bin/bash > /home/hacker/solve.sh
+hacker@chaining~scripting-with-arguments:~$ echo echo "$2 $1" >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-arguments:~$ chmod a+x /home/hacker/solve.sh
+hacker@chaining~scripting-with-arguments:~$ /challenge/run
+Correct! Your script properly reversed the arguments.
+Here's your flag:
+pwn.college{Q19PlaNSQXemM4EQOvA1k4ouHl0.0VNzMDOxwSM5kjNzEzW}
+
+```
+## What I learned
+> I learned how we can use conditional logic in our arguments.
+
+# 10. Scripting with Default cases 
+
+## My solve
+**Flag:** `pwn.college{Q19PlaNSQXemM4EQOvA1k4ouHl0.0VNzMDOxwSM5kjNzEzW}`
+
+```bash
+hacker@chaining~scripting-with-default-cases:~$ echo #!/bin/bash > /home/hacker/solve.sh
+hacker@chaining~scripting-with-default-cases:~$ echo if [ "$1" = "pwn" ] >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-default-cases:~$ echo then >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-default-cases:~$ echo echo "college" >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-default-cases:~$ echo else >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-default-cases:~$ echo echo "nope" >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-default-cases:~$ echo fi >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-default-cases:~$ chmod +x /home/hacker/solve.sh
+hacker@chaining~scripting-with-default-cases:~$ /challenge/run
+Correct! Your script properly handles the if/else conditions.
+Here's your flag:
+pwn.college{wQlkjQ7cmiV6yGItMzVVqGRmzqn.01NzMDOxwSM5kjNzEzW}
+
+```
+## What I learned
+> I learned how we can use the else statement along with the if in linux.
+
+# 11. Scripting with Multiple Condtions
+
+## My solve
+**Flag:** `pwn.college{Q19PlaNSQXemM4EQOvA1k4ouHl0.0VNzMDOxwSM5kjNzEzW}`
+
+```bash
+hacker@chaining~scripting-with-multiple-conditions:~$ echo #!/bin/bash > /home/hacker/solve.sh
+hacker@chaining~scripting-with-multiple-conditions:~$ echo if [ "$1" = "hack" ] >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-multiple-conditions:~$ echo then >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-multiple-conditions:~$ echo echo "the planet" >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-multiple-conditions:~$ echo elif [ "$1" = "pwn" ] >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-multiple-conditions:~$ echo then >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-multiple-conditions:~$ echo echo "college" >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-multiple-conditions:~$ echo elif [ "$1" = "learn" ] >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-multiple-conditions:~$ echo then >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-multiple-conditions:~$ echo  echo "linux" >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-multiple-conditions:~$ echo else >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-multiple-conditions:~$ echo echo "unknown" >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-multiple-conditions:~$ echo fi >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-multiple-conditions:~$ chmod +x /home/hacker/solve.sh
+hacker@chaining~scripting-with-multiple-conditions:~$ /challenge/run
+Correct! Your script properly handles all the conditions with elif.
+Here's your flag:
+pwn.college{wseNDwsCR-XSJP1wx1ZZmSXpkea.0FOzMDOxwSM5kjNzEzW}
+
+```
+## What I learned
+> I learned how we can use elif for multiple conditions in linux.
+
+
+# 12. Reading Shell scripts 
+
+## My solve
+**Flag:** `pwn.college{cwXwmwPQQAxWDmHPjBEb1htMy0u.0lMwgDOxwSM5kjNzEzW}`
+
+```bash
+hacker@chaining~reading-shell-scripts:~$ cat /challenge/run
+#!/opt/pwn.college/bash
+
+read GUESS
+if [ "$GUESS" == "hack the PLANET" ]
+then
+        echo "CORRECT! Your flag:"
+        cat /flag
+else
+        echo "Read the /challenge/run file to figure out the correct password!"
+fi
+hacker@chaining~reading-shell-scripts:~$ echo "hack the PLANET" | /challenge/run
+CORRECT! Your flag:
+pwn.college{cwXwmwPQQAxWDmHPjBEb1htMy0u.0lMwgDOxwSM5kjNzEzW}
+```
+## What I learned
+> I learned how to read shell scripts(/challenge/run in this challenge).
 
 
 
