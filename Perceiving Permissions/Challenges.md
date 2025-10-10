@@ -569,6 +569,24 @@ pwn.college{s5GTSpz9s_slyIZzpDFTfcHiIiN.QXzETO0wSM5kjNzEzW}
 ## What I learned 
 > In addition to adding and removing permissions, as in the previous level, chmod can also simply set permissions altogether, overwriting the old ones.
 
+# 8. The SUID Bit
+> This challenge teaches us how to change the ownership of a file to help us read it.
+
+## My solve
+**Flag:** `pwn.college{wlWo7oNaq-Z2-9zU2Xi2hVNfFWh.QXxEjN0wSM5kjNzEzW}`
+```bash
+hacker@permissions~the-suid-bit:~$ chmod u+s /challenge/getroot
+hacker@permissions~the-suid-bit:~$ /challenge/getroot
+SUCCESS! You have set the suid bit on this program, and it is running as root! 
+Here is your shell...
+root@permissions~the-suid-bit:~#    cat /flag
+pwn.college{k4Fu7v6dAL7h1t3W7frjGkEeol5.QXzEjN0wSM5kjNzEzW}
+```
+
+## What I learned 
+> SUID is a special permission bit in that changes who a program runs as. It can allow a user to run a program as the owner of that program's file.
+> Syntax: chmod u+s [program]
+
 
 
 
