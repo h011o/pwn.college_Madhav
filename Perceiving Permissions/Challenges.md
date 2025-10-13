@@ -584,7 +584,6 @@ pwn.college{k4Fu7v6dAL7h1t3W7frjGkEeol5.QXzEjN0wSM5kjNzEzW}
 
 ## What I learned 
 > SUID is a special permission bit in that changes who a program runs as. It can allow a user to run a program as the owner of that program's file.
-
 > Syntax: chmod u+s [program]
 
 
