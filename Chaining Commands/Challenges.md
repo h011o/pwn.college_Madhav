@@ -158,20 +158,26 @@ pwn.college{Q19PlaNSQXemM4EQOvA1k4ouHl0.0VNzMDOxwSM5kjNzEzW}
 # 9. Scripting with conditionals
 
 ## My solve
-**Flag:** `pwn.college{Q19PlaNSQXemM4EQOvA1k4ouHl0.0VNzMDOxwSM5kjNzEzW}`
+**Flag:** `pwn.college{EgAhCEEe-w_Nk2-sTPwL_6cYefe.0lNzMDOxwSM5kjNzEzW}`
 
 ```bash
-hacker@chaining~scripting-with-arguments:~$ echo #!/bin/bash > /home/hacker/solve.sh
-hacker@chaining~scripting-with-arguments:~$ echo echo "$2 $1" >> /home/hacker/solve.sh
-hacker@chaining~scripting-with-arguments:~$ chmod a+x /home/hacker/solve.sh
-hacker@chaining~scripting-with-arguments:~$ /challenge/run
-Correct! Your script properly reversed the arguments.
+hacker@chaining~scripting-with-conditionals:~$ echo '#!/bin/bash' > /home/hacker/solve.sh
+hacker@chaining~scripting-with-conditionals:~$ echo 'if [ "$1" == "pwn" ]' >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-conditionals:~$ echo 'then' >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-conditionals:~$ echo '  echo "college"' >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-conditionals:~$ echo 'fi' >> /home/hacker/solve.sh
+hacker@chaining~scripting-with-conditionals:~$ chmod a+x /home/hacker/solve.sh
+hacker@chaining~scripting-with-conditionals:~$ /challenge/run
+Correct! Your script properly handles all the conditions.
 Here's your flag:
-pwn.college{Q19PlaNSQXemM4EQOvA1k4ouHl0.0VNzMDOxwSM5kjNzEzW}
+pwn.college{EgAhCEEe-w_Nk2-sTPwL_6cYefe.0lNzMDOxwSM5kjNzEzW}
 
 ```
 ## What I learned
 > I learned how we can use conditional logic in our arguments.
+> I also learned to use the following syntax while using conditonals in linux:
+> There has to be a space after if, after '[' and before ']'.
+> if then and fi must all be in different lines 
 
 # 10. Scripting with Default cases 
 
