@@ -123,7 +123,7 @@ pwn.college{MMvqK5wGUOBvYqD5PyWa4mZo8Xw.QX0cjM1wSM5kjNzEzW}
 
 ```bash
 hacker@chaining~understanding-shebangs:~$ echo #!/bin/bash > /home/hacker/solve.sh
-hacker@chaining~understanding-shebangs:~$ echo  echo "hack the planet" >> /home/hacker/solve.sh
+hacker@chaining~understanding-shebangs:~$ echo  'echo "hack the planet"' >> /home/hacker/solve.sh
 hacker@chaining~understanding-shebangs:~$ chmod a+x /home/hacker/solve.sh
 hacker@chaining~understanding-shebangs:~$ /challenge/run
 Testing your script...
