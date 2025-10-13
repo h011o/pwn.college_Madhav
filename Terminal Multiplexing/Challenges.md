@@ -99,7 +99,7 @@ Here is your flag: pwn.college{48WJXAAkkAmOrgDhGPK3OLjZbmy.0FM5IDOxwSM5kjNzEzW}
 ```
 
 ## What I learned 
-> I learned how to navigate through tmux screens in the linux terminal.
+> I learned how to navigate through tmux screens in the linux terminal
 
 
 
