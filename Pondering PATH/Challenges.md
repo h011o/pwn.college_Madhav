@@ -1,4 +1,4 @@
-# Challenges
+   # Challenges
 1. The PATH variable
 2. Setting PATH
 3. Finding commands
@@ -71,7 +71,9 @@ pwn.college{cdjrRzXIv69zlHPsbIJhmXl-uNd.01NzEzNxwSM5kjNzEzW}
 > **Flag:** `pwn.college{A1NIsYzw_RrTWAOoqmctVLKSLTL.QX2cjM1wSM5kjNzEzW}`
 
 ```bash
-hacker@path~adding-commands:~$ echo '#!/bin/bash' > win  
+hacker@path~adding-commands:~$ echo '#!/bin/bash' > win
+hacker@path~adding-commands:~$ which cat
+/run/dojo/bin/cat
 hacker@path~adding-commands:~$ echo '/run/dojo/bin/cat /flag' >> win
 hacker@path~adding-commands:~$ chmod +x win      
 hacker@path~adding-commands:~$ PATH=/home/hacker 
